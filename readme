@@ -9,6 +9,7 @@ Installation guide:
   2. init npm and npm i cmd
   3. add .env.development
   4. run cmd: npx nodemon
+  5. find DDL.sql file attached to setup tables
 
 Use Cases:  
   1. start with login/register APIs
