@@ -1,0 +1,56 @@
+Groceries Management Application (GMA)
+
+Node.js backend APIs with TypeScript and Sequelize.
+
+---
+
+API Endpoints:
+
+User Management:
+- POST: User Register
+  - URL: http://localhost:6001/web/user/register
+
+- POST: User Login
+  - URL: http://localhost:6001/web/user/login
+  - Authorization: Bearer Token
+  - Body (JSON):
+    {
+      "email": "reshavbajaj786@gmail.com",
+      "password": "resh1234"
+    }
+
+Grocery Management:
+- GET: Get All Groceries
+  - URL: http://localhost:6001/web/grocery/getAll
+  - Authorization: Bearer Token
+
+- POST: Add Grocery
+  - URL: http://localhost:6001/web/grocery/add
+  - Authorization: Bearer Token
+
+- PUT: Edit Grocery
+  - URL: http://localhost:6001/web/grocery/edit/1
+  - Authorization: Bearer Token
+
+- DELETE: Remove Grocery
+  - URL: http://localhost:6001/web/grocery/remove/1
+  - Authorization: Bearer Token
+
+Order Management:
+- POST: Place Order
+  - URL: http://localhost:6001/web/grocery/order
+  - Authorization: Bearer Token
+  - Body (JSON):
+    {
+      "items": [
+        { "groceryId": "3", "quantity": 3 },
+        { "groceryId": "13", "quantity": 2000 },
+        { "groceryId": "14", "quantity": 5000 },
+        { "groceryId": "15", "quantity": 5 }
+      ]
+    }
+
+Authorization:
+- Use Bearer Token in the request header.
+  - Format: Authorization: Bearer <token>
+
