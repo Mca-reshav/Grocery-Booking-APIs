@@ -1,14 +1,36 @@
-Groceries Management Application (GMA)
+Grocery Booking APIs
 
-Node.js backend APIs with TypeScript and Sequelize.
+Node.js backend APIs with TypeScript and Sequelize ORM.
 
 ---
+
+Installation guide: 
+  1. Clone the repo to local
+  2. init npm and npm i cmd
+  3. add .env.development
+  4. run cmd: npx nodemon
+
+Use Cases:  
+  1. start with login/register APIs
+  2. Get the auth token and use to add at auth header
+  3. Pass the necessary URL params or body
+
+Roles:
+  1. Admin: CRUD on grocery details
+  2. User: View and place bulk orders 
+
+Tech Stack:
+  1. Node js with TypeScript
+  2. PostgreSQL 
+  3. Dockerised 
+  
 
 API Endpoints:
 
 User Management:
 - POST: User Register
   - URL: http://localhost:6001/web/user/register
+  - Usage: To become a registered user
 
 - POST: User Login
   - URL: http://localhost:6001/web/user/login
@@ -18,23 +40,28 @@ User Management:
       "email": "reshavbajaj786@gmail.com",
       "password": "resh1234"
     }
+  - Usage: Login to get auth token 
 
 Grocery Management:
 - GET: Get All Groceries
   - URL: http://localhost:6001/web/grocery/getAll
   - Authorization: Bearer Token
+  - Usage: Get list based on role
 
 - POST: Add Grocery
   - URL: http://localhost:6001/web/grocery/add
   - Authorization: Bearer Token
+  - Usage: Add new grocery items to list
 
 - PUT: Edit Grocery
   - URL: http://localhost:6001/web/grocery/edit/1
   - Authorization: Bearer Token
+  - Usage: Edit the existing grocery item and manage the inventory level
 
 - DELETE: Remove Grocery
   - URL: http://localhost:6001/web/grocery/remove/1
   - Authorization: Bearer Token
+  - Usage: Remove the grocery item as per need
 
 Order Management:
 - POST: Place Order
@@ -49,6 +76,7 @@ Order Management:
         { "groceryId": "15", "quantity": 5 }
       ]
     }
+  - Usage: Place bulk order as user and get detailed info of order
 
 Authorization:
 - Use Bearer Token in the request header.
